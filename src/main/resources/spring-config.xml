@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            https://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <import resource="jpa-config.xml"/>
     <bean name="department1" class="com.workforces.workforces.entities.Department">
         <property name="name" value="Electronic"/>
         <property name="id" value="1"/>
@@ -23,11 +23,14 @@
         <property name="department" ref="department1"/>
     </bean>
 
-    <bean name="employeeService" class="com.workforces.workforces.services.EmployeeService">
+    <!--<bean name="employeeService" class="com.workforces.workforces.services.EmployeeService">
         <constructor-arg index="0" ref="employee1"/>
     </bean>
     <bean name="employeeService1" class="com.workforces.workforces.services.EmployeeService">
         <property name="employee" ref="employee1"/>
+    </bean>-->
+    <bean name="employeeService" class="com.workforces.workforces.services.EmployeeService">
+        <constructor-arg index="0" ref="employeeRepository"/>
     </bean>
 
 </beans>
