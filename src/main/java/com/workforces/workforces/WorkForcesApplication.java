@@ -12,8 +12,10 @@ public class WorkForcesApplication {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
         //Employee employee1 = (Employee) applicationContext.getBean("employee1");
         Employee employee1 = applicationContext.getBean("employee1", Employee.class);
-
         System.out.println(employee1);
+        employee1.setName("Ahmed");
+        Employee employee2 = applicationContext.getBean("employee1", Employee.class);
+        System.out.println(employee2);
     }
 
 }
