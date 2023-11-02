@@ -23,4 +23,11 @@
         <property name="department" ref="department1"/>
     </bean>
 
+    <bean name="employeeService" class="com.workforces.workforces.services.EmployeeService">
+        <constructor-arg index="0" ref="employee1"/>
+    </bean>
+    <bean name="employeeService1" class="com.workforces.workforces.services.EmployeeService">
+        <property name="employee" ref="employee1"/>
+    </bean>
+
 </beans>
