@@ -2,10 +2,7 @@ package com.workforces.workforces.entities;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -18,4 +15,6 @@ public class Employee {
     private String name;
     private Double salary;
 
+    @ManyToOne
+    private Department department;
 }
